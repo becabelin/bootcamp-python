@@ -14,4 +14,3 @@ print(f"A primeira palavra do nome é {aluno.split()[0]}") # split() separa a st
 # Uma variável guarda um único valor; listas e tuplas podem guardar vários valores.
 # As listas podem ser manipuladas (pode-se inserir elementos, remover elementos, ordenar a lista, ...).
 # As tuplas apenas guardam os valores, sem a possibilidade de ter seus elementos alterados.
-
