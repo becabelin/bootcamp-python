@@ -42,7 +42,7 @@ def imprime(cartela: dict[str, list[int]]) -> None:
     # Formata a cartela para imprimir na tela
 
     print("B   I   N   G   O")
-    print("-" * 10)
+    print("-" * 20)
 
     for linha in range(5):
 

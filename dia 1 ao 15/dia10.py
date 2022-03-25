@@ -34,20 +34,13 @@ Passo número desafio:
 from random import choice, randint, seed
 import dia10_cartela
 
-# Travando o gerador de números aleatórios
-seed(1)
-
 cartela_1 = dia10_cartela.gerar()
-
-dia10_cartela.imprime(cartela_1)
 
 letra_sorteada = choice(dia10_cartela.LETRAS)
 
 minimo, maximo = dia10_cartela.min_max(letra_sorteada)
 
 numero_sorteado = randint(minimo, maximo)
-
-print(f"A combinação sorteada foi: {letra_sorteada} {numero_sorteado}")
 
 if numero_sorteado in cartela_1[letra_sorteada]:
 
@@ -56,4 +49,5 @@ if numero_sorteado in cartela_1[letra_sorteada]:
     print(f'O número sorteado está na cartela!')
     cartela_1[letra_sorteada][indice] = '--'
 
-cartela.imprime(cartela_1)
+dia10_cartela.imprime(cartela_1)
+print(f"A combinação sorteada foi: {letra_sorteada} {numero_sorteado}")
