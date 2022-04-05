@@ -19,7 +19,7 @@ def get_secret_word() -> str:
 
     words_list = list()
 
-    with open(r"Bootcamp Stone\dia 1 ao 15\palavras.txt", "r") as document:
+    with open(r"dia 1 ao 15\palavras.txt", "r") as document:
         for word in document:
             word = word.strip().upper()
             words_list.append(word)
@@ -95,7 +95,7 @@ def game_continue( correct_letters: list, secret_word: str, error: int, attempts
 
     return True  
 
-secret_word = get_secret_word(WORDS) # variável para palavra secreta
+secret_word = get_secret_word() # variável para palavra secreta
 correct_letters = []  # variável que armazena as letras corretas já jogadas
 missed_letters = []  # variável que armazena as letras incorretas já jogadas
 error = 0  # erro inicial
