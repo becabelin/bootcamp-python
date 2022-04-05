@@ -1,38 +1,38 @@
-WORDS = {
-'amarelo'
-'amiga'
-'amor'
-'bolo'
-'branco'
-'cama'
-'caneca'
-'celular'
-'clube'
-'copo'
-'doce'
-'elefante'
-'escola'
-'estojo'
-'faca'
-'foto'
-'garfo'
-'geleia'
-'girafa'
-'janela'
-'limonada'
-'meia'
-'noite'
-'ovo'
-'pai'
-'parque'
-'passarinho'
-'peixe'
-'pijama'
-'rato'
-'umbigo'
-}
+WORDS = [
+'amarelo',
+'amiga',
+'amor',
+'bolo',
+'branco',
+'cama',
+'caneca',
+'celular',
+'clube',
+'copo',
+'doce',
+'elefante',
+'escola',
+'estojo',
+'faca',
+'foto',
+'garfo',
+'geleia',
+'girafa',
+'janela',
+'limonada',
+'meia',
+'noite',
+'ovo',
+'pai',
+'parque',
+'passarinho',
+'peixe',
+'pijama',
+'rato',
+'umbigo',
+]
 
-STATUS = {
+STATUS = [
     r"""
 _____________
 |            |
@@ -107,4 +107,4 @@ _____________
 . .          `'       . .
 VOCÊ PERDEU, NOOB!
 """,
-}
+]

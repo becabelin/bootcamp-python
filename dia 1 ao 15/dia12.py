@@ -11,13 +11,26 @@ Algumas funções, importações e variáveis foram pré-definidas para auxiliá
 from random import choice
 from dia12_palavras import WORDS, STATUS
 
-def get_secret_word(words: list) -> str:
+def get_secret_word() -> str:
+    
+    """ 
+    Devolve uma palavra aleatória de uma lista.
+    """
 
-    # Devolve uma palavra aleatória de uma lista.
+    words_list = list()
 
-    return choice(words)
+    with open(r"Bootcamp Stone\dia 1 ao 15\palavras.txt", "r") as document:
+        for word in document:
+            word = word.strip().upper()
+            words_list.append(word)
+    return choice(words_list)
 
-def print_game_board(secret_word: str, correct_letters: list, wrong_letters: list) -> None:
+def print_game_board(secret_word: str,
+    correct_letters: list[str],
+    missed_letters: list[str],
+    error: int,
+    attempts: int,
+    status: list[str]) -> None:
     # Imprime a situação atual do jogo.
 
     encoded_word = ""
@@ -29,18 +42,22 @@ def print_game_board(secret_word: str, correct_letters: list, wrong_letters: lis
             encoded_word += letter
 
     if error <= attempts:
-        print(STATUS[error])
+        print(status[error])
         print(encoded_word)
 
     print(f"\n Letras corretas: {', '.join(correct_letters)}")
-    print(f" Letras erradas: {', '.join(wrong_letters)}")
+    print(f" Letras erradas: {', '.join(missed_letters)}")
 
     return None
 
 def read_input_player() -> str:
     # Lê uma letra do usuário.
 
-    player_letter = str(input("\nJogador, digite uma letra: ").toLowerCase())
+    player_letter = input("\nJogador, digite uma letra: ").upper()
+
+    while len(player_letter) != 1:
+        print("\nPor favor, digiteapenas uma letra!")
+        player_letter = input("\nJogador, digite uma letra: ").upper()
     return player_letter
 
 def guess_letter(player_letter: str, secret_word: str, correct_letters: list, wrong_letters: list) -> bool:
@@ -61,20 +78,22 @@ def guess_letter(player_letter: str, secret_word: str, correct_letters: list, wr
         return False
 
     else:
-        print("Essa letra já foi jogada, por favor, escolha outra!")
+        print("\nEssa letra já foi jogada, por favor, escolha outra!")
         return False
 
-def game_continue(secret_word: str, correct_letters: list, wrong_letters: list, error: int, attempts: int) -> bool:
+def game_continue( correct_letters: list, secret_word: str, error: int, attempts: int, status: list) -> bool:
     # Função que decide se jogo já encerrou ou não.
     
     if set(correct_letters) == set(secret_word):
-        print("\nParabéns, você ganhou! A palavra secreta era:", secret_word)
+        print(f"\nParabéns, você ganhou! A palavra secreta era: {secret_word}")
         return False
 
     elif error >= attempts:
-        print(STATUS[error])
-        print("\nVocê perdeu! A palavra era:", secret_word)
-        return False    
+        print(status[error])
+        print(f"\nVocê perdeu! A palavra era: {secret_word}")
+        return False
+
+    return True  
 
 secret_word = get_secret_word(WORDS) # variável para palavra secreta
 correct_letters = []  # variável que armazena as letras corretas já jogadas
