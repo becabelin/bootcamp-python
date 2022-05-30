@@ -1,7 +1,7 @@
 ![](https://user-images.githubusercontent.com/69727594/154172033-847f2118-dd5d-48fe-a98e-6d71484fbc1f.png)
 
 ## /código[s] - Bootcamp de Python
-### Todos as atividades realizadas durante o bootcamp
+### Todas as atividades realizadas durante o bootcamp
 
 Oiê, tudo bem?
 Esse repositório foi criado para ser um mapinha de todos os meus projetos 😉
